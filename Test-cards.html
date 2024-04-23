@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Cards</title>
+  <!-- Agrega los estilos de Bootstrap -->
+  <link rel="stylesheet" href="./css/card.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container bg-white text-center">
+    <h1>TOP CARROS</h1>
+    <div class="row" id="userCardsContainer">
+
+      <!-- Los cards se agregarán aquí dinámicamente -->
+    </div>
+  </div>
+
+  <script>
+    const users = [
+      {
+        name: 'Toyota Corolla Hybrid',
+        avatar: 'https://article.images.consumerreports.org/image/upload/w_652,f_auto,q_auto/v1675905635/prod/content/dam/CRO-Images-2023/04April/Magazine/CR-Magazine-Inline-Ten-Top-Picks-Toyota-Corolla-Hybrid-0223',
+      },
+      {
+        name: 'Toyota Corolla Cross',
+        avatar: 'https://article.images.consumerreports.org/image/upload/w_652,f_auto,q_auto/v1675905635/prod/content/dam/CRO-Images-2023/04April/Magazine/CR-Magazine-Inline-Ten-Top-Picks-Toyota-Corolla-Cross-0223',
+      },
+      {
+        name: 'Subaru Forester',
+        avatar: 'https://article.images.consumerreports.org/image/upload/w_652,f_auto,q_auto/v1675905636/prod/content/dam/CRO-Images-2023/04April/Magazine/CR-Magazine-Inline-Ten-Top-Picks-Subaru-Forester-0223',
+      },
+      {
+        name: 'Ford Maverick Hybrid',
+        avatar: 'https://article.images.consumerreports.org/image/upload/w_652,f_auto,q_auto/v1675905635/prod/content/dam/CRO-Images-2023/04April/Magazine/CR-Magazine-Inline-Ten-Top-Picks-Ford-Maverick-Hybrid-0223',
+      },
+      {
+        name: 'Toyota Camry Hybrid',
+        avatar: 'https://article.images.consumerreports.org/image/upload/w_652,f_auto,q_auto/v1675905635/prod/content/dam/CRO-Images-2023/04April/Magazine/CR-Magazine-Inline-Ten-Top-Picks-Toyota-Camry-Hybrid-0223',
+      },
+      {
+        name: 'Nissan Leaf',
+        avatar: 'https://img.remediosdigitales.com/29438e/ford-mustang-shelby-gt500-mexico_/840_560.jpg',
+      },
+      {
+        name: 'Hyundai Santa Fe Hybrid',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlnPcG-w3PPojgtBaJYOv-OtTy-0mQy7xevu4jR_f7Gw&s',
+      },
+      {
+        name: 'Kia Telluride',
+        avatar: 'https://acnews.blob.core.windows.net/imgnews/medium/NAZ_9a400a26a9e342b6840fce7bc4ae6b76.webp',
+      },
+      {
+        name: 'Tesla Model 3',
+        avatar: 'https://www.tesla.com/ownersmanual/images/GUID-B5641257-9E85-404B-9667-4DA5FDF6D2E7-online-en-US.png',
+      },
+      {
+        name: 'Toyota RAV4 Prime',
+        avatar: 'https://crdms.images.consumerreports.org/c_lfill,w_180,q_auto,f_auto,dpr_2/prod/cars/cr/car-versions/16288-2021-toyota-rav4-prime-xse',
+      }
+    ];
+
+    // Obtener el contenedor donde se mostrarán los cards
+    const userCardsContainer = document.getElementById('userCardsContainer');
+
+    // Iterar sobre el array de usuarios
+    //const container = document.createElement('div');
+
+    // Generar el HTML de todos los cards y agregarlos al contenedor
+    users.forEach(user => {
+      const cardHTML = `
+      <div class="card d-flex justify-content-center col-lg-4 col-md-6 mt-3">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <img src="${user.avatar}" alt="Card Image" width="250" height="150">
+              <strong></strong>
+            </div>
+          </div>
+          <div class="front">
+            
+            <div class="img">
+              <div class="circle">
+              </div>
+              <div class="circle" id="right">
+              </div>
+              <div class="circle" id="bottom">
+              </div>
+            </div>
+
+            <div class="front-content">
+              <small class="badge">Carrito</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>${user.name}</strong>
+                  </p>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      userCardsContainer.innerHTML += cardHTML;
+    });
+    /*users.forEach(user => {
+      const cardHTML = `
+      <div class="card d-flex justify-content-center col-lg-4 col-md-6 mt-3" style="width: 18rem;">
+        <img src="${user.avatar}" class="card-img-top" alt="Card Image" width="250" height="150">
+        <div class="card-body">
+          <h5 class="card-title">${user.name}</h5>
+        </div>
+      </div>
+      `;
+      userCardsContainer.innerHTML += cardHTML;
+    });*/
+
+    // Agregar el contenedor al contenedor deseado en el documento
+    //userCardsContainer.appendChild(container);
+  </script>
+
+</body>
+
+</html>
