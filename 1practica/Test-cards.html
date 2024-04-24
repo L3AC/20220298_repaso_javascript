@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Cards</title>
   <!-- Agrega los estilos de Bootstrap -->
-  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="card.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
   <div class="container bg-white text-center">
     <h1>TOP CARROS</h1>
     <div class="row" id="userCardsContainer">
@@ -67,9 +66,6 @@
     // Obtener el contenedor donde se mostrarán los cards
     const userCardsContainer = document.getElementById('userCardsContainer');
 
-    // Iterar sobre el array de usuarios
-    //const container = document.createElement('div');
-
     // Generar el HTML de todos los cards y agregarlos al contenedor
     users.forEach(user => {
       const cardHTML = `
@@ -107,22 +103,9 @@
         </div>
       </div>
       `;
+      // Agregar el contenedor al contenedor deseado en el documento
       userCardsContainer.innerHTML += cardHTML;
     });
-    /*users.forEach(user => {
-      const cardHTML = `
-      <div class="card d-flex justify-content-center col-lg-4 col-md-6 mt-3" style="width: 18rem;">
-        <img src="${user.avatar}" class="card-img-top" alt="Card Image" width="250" height="150">
-        <div class="card-body">
-          <h5 class="card-title">${user.name}</h5>
-        </div>
-      </div>
-      `;
-      userCardsContainer.innerHTML += cardHTML;
-    });*/
-
-    // Agregar el contenedor al contenedor deseado en el documento
-    //userCardsContainer.appendChild(container);
   </script>
 
 </body>
